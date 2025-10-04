@@ -104,20 +104,28 @@ VITE_GOOGLE_CLIENT_ID=your_google_oauth_client_id (optional)
 Run client:
 npm run dev
 
-📸 Screenshots
-🏠 Homepage
+## 📸 Screenshots
 
-🔑 Login
+### 🏠 Homepage
+![Homepage](./screenshots/HomePage.png)
 
-📝 Book Details
+### 🔑 Login
+![Login](./screenshots/Login_Page.png)
 
-⭐ Favourite Books
+### 📝 Book Details
+![Book Details](./screenshots/book_details.png)
 
-🧑 Signup
+### ⭐ Favourite Books
+![Favourite Books](./screenshots/fav.png)
 
-📊 Table View
+### 🧑 Signup
+![Signup](./screenshots/signUp_page.png)
 
-👥 Users (Admin)
+### 📊 Table View
+![Table](./screenshots/table.png)
+
+### 👥 Users (Admin)
+![Users](./screenshots/users.png)
 
 📡 API Endpoints
 Auth Routes
