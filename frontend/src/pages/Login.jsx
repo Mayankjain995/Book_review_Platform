@@ -16,7 +16,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { OauthLogin } from "@/components/OauthLogin";
 import { loginSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
@@ -32,17 +31,12 @@ const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const form = useForm({
     resolver: zodResolver(loginSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
+    defaultValues: { email: "", password: "" },
   });
 
   const navigate = useNavigate();
   useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/books");
-    }
+    if (isLoggedIn) navigate("/books");
   }, []);
 
   const onSubmit = (values) => {
@@ -66,85 +60,95 @@ const LoginForm = () => {
   };
 
   return (
-    <>
-      <div className="grid items-center p-4 min-h-svh dark:bg-zinc-950">
-        <Card className="mx-auto max-w-sm">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
-              <CardHeader>
-                <CardTitle className="text-2xl">Login</CardTitle>
-                <CardDescription>
-                  Enter your email below to login to your account
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid gap-4">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem className="grid">
-                        <FormLabel className="text-left">Email</FormLabel>
-                        <FormControl>
-                          <Input placeholder="m@email.com" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="password"
-                    render={({ field }) => (
-                      <FormItem className="grid">
-                        <div className="flex">
-                          <FormLabel className="text-left">Password</FormLabel>
-                          <Link
-                            href="#"
-                            className="ml-auto inline-block text-sm underline">
-                            Forgot your password?
-                          </Link>
-                        </div>
-                        <FormControl>
-                          <Input
-                            type="password"
-                            placeholder="password"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  {isLoading ? (
-                    <Button disabled>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Please wait
-                    </Button>
-                  ) : (
-                    <Button type="submit" className="w-full">
-                      Login
-                    </Button>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-zinc-900 dark:to-zinc-950 p-4">
+      <Card className="w-full max-w-md shadow-lg rounded-xl border border-gray-200 dark:border-zinc-800">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="p-6">
+            <CardHeader>
+              <CardTitle className="text-3xl font-bold text-center text-gray-900 dark:text-white">
+                Login
+              </CardTitle>
+              <CardDescription className="text-center text-gray-600 dark:text-gray-300">
+                Enter your credentials to access your account
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent className="mt-4">
+              <div className="grid gap-5">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="you@example.com"
+                          {...field}
+                          className="bg-gray-50 dark:bg-zinc-800 border-gray-300 dark:border-zinc-700 focus:ring-indigo-500 focus:border-indigo-500"
+                        />
+                      </FormControl>
+                      <FormMessage className="text-red-500" />
+                    </FormItem>
                   )}
-                </div>
-                <div className="mt-4 text-center text-sm">
-                  Don&apos;t have an account?{" "}
-                  <Link to="/signup" className="underline">
-                    Sign up
-                  </Link>
-                </div>
-              </CardContent>
-            </form>
-          </Form>
-          <OauthLogin />
-          <div className="w-full text-center">
-            <h3 className="text-zinc-400">user: john.doe@example.com</h3>
-            <h3 className="text-zinc-400">admin: john.doe2@example.com</h3>
-            <h3 className="text-zinc-400">password: password123</h3>
-          </div>
-        </Card>
-      </div>
-    </>
+                />
+
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <div className="flex justify-between items-center mb-1">
+                        <FormLabel>Password</FormLabel>
+                        <Link
+                          href="#"
+                          className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline"
+                        >
+                          Forgot password?
+                        </Link>
+                      </div>
+                      <FormControl>
+                        <Input
+                          type="password"
+                          placeholder="Enter password"
+                          {...field}
+                          className="bg-gray-50 dark:bg-zinc-800 border-gray-300 dark:border-zinc-700 focus:ring-indigo-500 focus:border-indigo-500"
+                        />
+                      </FormControl>
+                      <FormMessage className="text-red-500" />
+                    </FormItem>
+                  )}
+                />
+
+                {isLoading ? (
+                  <Button disabled className="w-full flex justify-center items-center gap-2">
+                    <Loader2 className="animate-spin h-5 w-5" /> Please wait
+                  </Button>
+                ) : (
+                  <Button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white">
+                    Login
+                  </Button>
+                )}
+              </div>
+
+              <div className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+                Don't have an account?{" "}
+                <Link to="/signup" className="text-indigo-600 dark:text-indigo-400 underline">
+                  Sign up
+                </Link>
+              </div>
+
+              {/* Predefined test credentials */}
+              <div className="mt-4 text-center text-gray-400 text-xs space-y-1">
+                <p>User: john.doe@example.com</p>
+                <p>Admin: john.doe2@example.com</p>
+                <p>Password: password123</p>
+              </div>
+            </CardContent>
+          </form>
+        </Form>
+      </Card>
+    </div>
   );
 };
 

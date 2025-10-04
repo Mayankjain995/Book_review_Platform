@@ -15,13 +15,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { OauthLogin } from "@/components/OauthLogin";
 import { userSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -36,16 +34,21 @@ const SignupForm = () => {
       password: "",
     },
   });
+
   const navigate = useNavigate();
+
   useEffect(() => {
     if (localStorage.getItem("token")) {
       navigate("/books");
     }
   }, []);
+
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = (values) => {
+    console.log(import.meta.env.VITE_BACKEND_URL);
     setIsLoading(true);
+
     let promise = axios.post(
       `${import.meta.env.VITE_BACKEND_URL}/users/signup`,
       values
@@ -153,7 +156,6 @@ const SignupForm = () => {
             </CardContent>
           </form>
         </Form>
-        <OauthLogin />
       </Card>
     </div>
   );

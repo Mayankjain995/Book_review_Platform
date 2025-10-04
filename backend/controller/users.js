@@ -6,6 +6,7 @@ const Book = require("../models/books");
 
 // Signup route
 module.exports.signup = async (req, res) => {
+  console.log(req.body.email)
   const existingUser = await User.findOne({ email: req.body.email });
   if (existingUser) {
     throw new ExpressError(400, "Email already exists");

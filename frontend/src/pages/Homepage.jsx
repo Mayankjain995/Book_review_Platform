@@ -16,7 +16,7 @@ const Homepage = () => {
   const navigate = useNavigate();
   const { books, isLoading } = useBooks();
   const setPageTitle = useSetRecoilState(pageTitleAtom);
-  useEffect(() => setPageTitle("The Book World"), []);
+  useEffect(() => setPageTitle("Book Review Platform"), []);
 
   return (
     <main className="grid flex-1 items-start p-2 sm:px-4 md:gap-8">
