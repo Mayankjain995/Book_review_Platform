@@ -106,81 +106,92 @@ npm run dev
 
 ## 📸 Screenshots
 
-### 🏠 Homepage
-![Homepage](./screenshots/HomePage.png)
 
-### 🔑 Login
-![Login](./screenshots/Login_Page.png)
-
-### 📝 Book Details
-![Book Details](./screenshots/book_details.png)
-
-### ⭐ Favourite Books
-![Favourite Books](./screenshots/fav.png)
 
 ### 🧑 Signup
 ![Signup](./screenshots/signUp_page.png)
 
+
+
+
+### 🔑 Login
+![Login](./screenshots/Login_Page.png)
+
+
+
+
+### 🏠 Homepage
+![Homepage](./screenshots/HomePage.png)
+
+
+
+
+### 📝 Book Details
+![Book Details](./screenshots/book_details.png)
+
+
+
+
+### ⭐ Favourite Books
+![Favourite Books](./screenshots/fav.png)
+
+
+
+
 ### 📊 Table View
 ![Table](./screenshots/table.png)
 
+
+
+
 ### 👥 Users (Admin)
-![Users](./screenshots/users.png)
+![Users](./screenshots/users.png.png)
+
+
 
 📡 API Endpoints
+
 Auth Routes
 
-POST /api/users/signup → Register new user
-
-POST /api/users/login → Login + get JWT
+- POST /api/users/signup → Register new user
+ - POST /api/users/login → Login + get JWT
 
 Book Routes
 
-GET /api/books → Get all books (with pagination)
-
-POST /api/books → Add new book (auth required)
-
-PUT /api/books/:id → Edit book (only creator)
-
-DELETE /api/books/:id → Delete book (only creator)
+- GET /api/books → Get all books (with pagination)
+- POST /api/books → Add new book (auth required)
+- PUT /api/books/:id → Edit book (only creator)
+- DELETE /api/books/:id → Delete book (only creator)
 
 Review Routes
 
-POST /api/books/:id/reviews → Add review
-
-PUT /api/reviews/:id → Edit review
-
-DELETE /api/reviews/:id → Delete review
+- POST /api/books/:id/reviews → Add review
+- PUT /api/reviews/:id → Edit review
+- DELETE /api/reviews/:id → Delete review
 
 ✅ Deliverables
 
- Full MERN stack project
-
- JWT authentication & bcrypt
-
- Book CRUD + pagination
-
- Review system with ratings
-
- React frontend with protected routes
-
- MongoDB Atlas with schema design
-
- README with setup instructions + screenshots
+ - Full MERN stack project
+ - JWT authentication & bcrypt
+ - Book CRUD + pagination
+ - Review system with ratings
+ - React frontend with protected routes
+ - MongoDB Atlas with schema design
+ - README with setup instructions + screenshots
 
 
- 👨‍💻 Author
+👨‍💻 Author
 
 Mayank
 📧 mayankbhandari647@gmail.com
 
 🔗 LinkedIn
+https://www.linkedin.com/in/mayank-btech-cse/
 
+Github:-
+https://github.com/Mayankjain995
 
 ---
-
-👉 Mayank, I’ve placed screenshots under a `screenshots/` folder (you’ll need to create that in your repo and put your PNGs there).  
-Do you want me to also **add a Postman collection section** (with example API tests) in the README for extra credit?
 
 
 
