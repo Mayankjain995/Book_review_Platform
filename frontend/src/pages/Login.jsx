@@ -140,9 +140,9 @@ const LoginForm = () => {
 
               {/* Predefined test credentials */}
               <div className="mt-4 text-center text-gray-400 text-xs space-y-1">
-                <p>User: john.doe@example.com</p>
-                <p>Admin: john.doe2@example.com</p>
-                <p>Password: password123</p>
+                <p>User: mayank@example.com</p>
+                <p>Admin: mayankjain@example.com</p>
+                <p>Password: Password123</p>
               </div>
             </CardContent>
           </form>
