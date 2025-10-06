@@ -2,6 +2,12 @@
 
 A fullstack **MERN Book Review Platform** where users can sign up, log in, add books, and write reviews.  
 This project demonstrates **authentication, CRUD operations, protected routes, MongoDB Atlas integration, and frontend integration**.
+---
+## 🚀 Deployment Demo Link
+
+- **Frontend:** [https://book-review-platform-rouge-three.vercel.app/books/](https://book-review-platform-rouge-three.vercel.app/books/)
+- **Backend:** [https://book-review-platform-aov5.onrender.com](https://book-review-platform-aov5.onrender.com)
+
 
 ---
 
